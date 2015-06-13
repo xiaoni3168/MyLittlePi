@@ -216,7 +216,8 @@ a {
     font-size: 1.1rem; } }
 
 @media screen and (max-width: 42em) {
-  .main-content {
+  .main
+  -content {
     padding: 2rem 1rem;
     font-size: 1rem; } }
 
@@ -243,3 +244,20 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+/*  my own css*/
+section h3 a{
+  display: block;
+}
+section.page-header h1 a{
+  text-decoration: none;
+  color: #fff;
+}
+section.main-content div p{
+  font-size: 15px;
+  text-indent: 2em;
+}
+section.main-content div h4{
+  margin-top: 5px;
+  text-indent: 2em;
+}
