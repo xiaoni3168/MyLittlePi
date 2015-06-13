@@ -261,3 +261,16 @@ section.main-content div h4{
   margin-top: 5px;
   text-indent: 2em;
 }
+section.main-content .btn{
+  padding: 0;
+  margin: 0;
+  display: inline;
+  cursor: pointer;
+}
+section.main-content .btn.btn-get{
+  background-color: #CC9D3A;
+  margin-left: 10px;
+}
+section.main-content .btn.btn-get:hover{
+  background-color: #C59839;
+}
