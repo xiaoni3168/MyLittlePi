@@ -30,6 +30,33 @@
       <p>准备一个读卡器，方便将系统写入SD卡</p>
       <p>下载系统，我这里使用的是<a href="http://pan.baidu.com/s/1c02Lv5u">2014-07-18-wheezy-raspbian.img</a><span class="btn btn-get" onclick="getBDY()">获取提取码</span></p>
       <p>下载系统写入工具<a href="http://pan.baidu.com/s/1qWObCjq">Win32DiskImager.exe</a><span class="btn btn-get" onclick="getBDY()">获取提取码</span></p>
+      <p>在系统制作完成后，在win上看到SD卡容量为56M左右，因为win无法查看UNIX系统的分区，而在启动树莓派之后，可以看到SD卡存储也只有2.7G左右，几乎没有什么内存了，这是应为还有位分配的容量，<a href="#dispart">SD卡分区</a></p>
+      <h3 id="dispart">SD卡分区</h3>
+      <p>查看分区详情</p>
+      <p><img src="images/df.png"></p>
+      <p>此处为分区处理后的结果</p>
+      <p>下面开始分区(<em>注:执行这些命令时，最好备份数据，以免重要数据丢失</em>)</p>
+      <p><code>sudo fdisk /dev/mmcblk0</code></p>
+      <p>按P</p>
+      <p>将看到的/dev/mmcblkop2的start值122880记下来，下面将会用到</p>
+      <p>执行命令:d（删除分区2，选择2）</p>
+      <p>执行命令:p（少了 一个分区）</p>
+      <p>执行命令:n（加分去）</p>
+      <p>执行命令:p（主分区）</p>
+      <p>选择2</p>
+      <p>在开始位置输入start值122880，后面的默认即可</p>
+      <p>执行命令:p</p>
+      <p>执行命令:w</p>
+      <p><img src="images/fdisk.png"></p>
+      <p>成功后如下:</p>
+      <p><img src="images/fdiskSUCC.png"></p>
+      <p>重启树莓派:</p>
+      <p><code>sudo reboot</code></p>
+      <p>重新登录成功后执行下列命令:</p>
+      <p><code>sudo resize2fs /dev/mmcblk0p2</code></p>
+      <p>用于修复分区</p>
+      <p><img src="images/fsresize.png"></p>
+      <p>*** <a href="http://www.phpbulo.com/archives/467.html">参考文献</a></p>
     </div>
 		<footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/xiaoni3168/MyLittlePi">Mylittlepi</a> is maintained by <a href="https://github.com/xiaoni3168">xiaoni3168</a>.</span>

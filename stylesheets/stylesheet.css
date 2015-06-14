@@ -261,6 +261,10 @@ section.main-content div h4{
   margin-top: 5px;
   text-indent: 2em;
 }
+section.main-content div em{
+  color: red;
+  font-style: normal;
+}
 section.main-content .btn{
   padding: 0;
   margin: 0;
